@@ -18,23 +18,25 @@ Whether you’re a data enthusiast eager to uncover public opinions, or a develo
 
 ### 🛠️ Project Steps
 1. **Data Cleaning and Preparation 🧹** :
-   - Check if data is labeled (apply annotation or labeling strategy if not) 
-   - Text cleaning (Remove noise, punctuation, emojis, special characters, and stopwords)
-   - Apply tokenization, padding, and prepare word embeddings (GloVe / Word2Vec) 
-   - Handle class imbalance if present (e.g., SMOTE or resampling) 
-   - Split into train/test/validation sets
+   - Check if the dataset is labeled (apply annotation strategy if not)
+   - Clean text (remove noise, punctuation, emojis, special characters, and stopwords)
+   - Normalize text (apply stemming and/or lemmatization)
+   - Apply tokenization and feature extraction (Bag of Words, TF-IDF, or Word Embeddings)
+   - Apply padding (only for embedding-based models requiring fixed-length input)
+   - Handle class imbalance (e.g., SMOTE or resampling techniques)
+   - Split the dataset into training, validation, and test sets
      
-3. **Model Building 🤖** :
+2. **Model Building 🤖** :
    - **Traditional baselines:** Logistic Regression, Support Vector Machine (SVM) with TF-IDF 
    - **Deep Learning Models:** LSTM (Long Short-Term Memory), Bi-LSTM (Bidirectional LSTM), CNN, Transformers-based models like BERT, RoBERTa, DistilBERT (fine-tuning pretrained models)
      
-4. **Model Evaluation ✅** :
-   - Use metrics: Accuracy, Precision, Recall, F1-score
-   - Confusion Matrix and ROC-AUC Curve 
-   - Cross-validation or train/test split validation
-   - fine-tuning hyperparameters for best performance.
+3. **Model Evaluation ✅** :
+   - Evaluate using metrics: Accuracy, Precision, Recall, F1-score
+   - Visualize results using Confusion Matrix and ROC-AUC Curve
+   - Perform cross-validation or train/test split validation
+   - fine-tuning hyperparameters to improve performance
      
-5. **Deployment 🌐** :
+4. **Deployment 🌐** :
    - Deploy the best-performing model as a web app using **Streamlit**
    - Provide easy-to-use input forms and display prediction results clearly.
    - Host on **Streamlit Cloud**
@@ -86,14 +88,14 @@ streamlit run app.py
 
 
 ## 📌 Future Work
-- ...
+- Add topic modeling (e.g., LDA) to extract themes from opinions
 - ...
 
 
 
 ## 🕵️‍♂️ Contributing
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](https://github.com/ibtihel-dhaouadi/laptop-price-prediction-tn/issues).
+Feel free to check the [issues page](https://github.com/ibtihel-dhaouadi/Food-Security-Sentiment/issues).
 
 
 
