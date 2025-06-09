@@ -1,42 +1,63 @@
-# 📊 Sentiment Analysis on Food Security in Malaysia | NLP
+# 📊 Sentiment Analysis on Food Security in Malaysia | NLP 🌾🇲🇾
 
-Welcome to our **Food Security Sentiment Analysis** project!
+![Python](https://img.shields.io/badge/python-3.11-blue)
 
-This project is a collaborative effort between [Onj Hajri](https://github.com/onsrajhi) and [ibtihel Dhaouadi](https://github.com/ibtihel-dhaouadi), aims to analyze public sentiment regarding **food security** in Malaysia using **Natural Language Processing (NLP)** and **Deep Learning (DL)**. The goal is to build a robust sentiment classification model and deploy it as a web application for public interaction.
+Welcome to my **Food Security Sentiment Analysis** project!
+
+In this project, I analyze public sentiment around food security issues in Malaysia by leveraging **Natural Language Processing (NLP)** and **Deep Learning** techniques. My goal is to build an effective **sentiment classification model** and deploy it as an interactive **web application**.
 
 Whether you’re a data enthusiast eager to uncover public opinions, or a developer ready to harness the power of deep learning and NLP, **this sentiment analysis project is your gateway.** 🚀✨
+
 
 
 ## 🚀 Project Overview
 
 ### 🎯 Objectives
 
-1. Clean and prepare a real-world dataset of food security-related reviews or opinions in Malaysia.
-2. Apply advanced NLP models to classify sentiment as **Positive**, **Neutral**, or **Negative**.
-3. Evaluate and validate model performance.
-4. Deploy the best-performing sentiment classifier as a user-friendly web application.
+1. Translate, clean, and prepare a multilingual dataset of food security-related posts.
+3. Score sentiment and detect high-risk content.
+4. Extract key discussion topics via topic modeling.
+5. Perform geospatial & temporal risk analysis.
+6. Train and fine-tune deep learning classifiers.
+7. Visualize insights in an interactive Power BI dashboard.
+8. Deploy the final model within a Dockerized web app.
+
+### 📚 Dataset Description
+
+The dataset consists of multilingual social media posts related to food security in Malaysia, containing approximately 34,000 records. Each post includes metadata such as timestamp and location when available.
+
 
 ### 🛠️ Project Steps
 1. **Data Cleaning and Preparation 🧹** :
-   - Check if the dataset is labeled (apply annotation strategy if not)
-   - Clean text (remove noise, punctuation, emojis, special characters, and stopwords)
-   - Normalize text (apply stemming and/or lemmatization)
-   - Apply tokenization and feature extraction (Bag of Words, TF-IDF, or Word Embeddings)
-   - Apply padding (only for embedding-based models requiring fixed-length input)
-   - Handle class imbalance (e.g., SMOTE or resampling techniques)
-   - Split the dataset into training, validation, and test sets
+   - translate all text data into English using Google Translate API, since the dataset contains posts in multiple languages
+   - apply standard text cleaning procedures including expanding contractions, removing URLs, mentions, emojis, special characters, and stopwords
+   - perform lemmatization to normalize words and reduce dimensionality
+   - score sentiment with VADER (very positive, positive, negative, very negative)
+   - detect high-risk or vulnerable posts by setting sentiment-score thresholds
+   - discover key themes via LDA topic modeling, evaluating with perplexity and coherence.
+   - Apply padding (only for embedding-based models requiring fixed-length input).
+   - Tokenize input using BERT tokenizer.
+   - Handling Class Imbalance
+   - Encode sentiment classes into numerical labels.
+   - Split the dataset into training, validation, and test sets.
      
-2. **Model Building 🤖** :
-   - **Traditional baselines:** Logistic Regression, Support Vector Machine (SVM) with TF-IDF 
-   - **Deep Learning Models:** LSTM (Long Short-Term Memory), Bi-LSTM (Bidirectional LSTM), CNN, Transformers-based models like BERT, RoBERTa, DistilBERT (fine-tuning pretrained models)
+3. **Model Building 🤖** :
+   - fine-tune pretrained transformers:
+      - BERT (Bidirectional Encoder Representations from Transformers)
+      - RoBERTa (A Robustly Optimized BERT Pretraining Approach)
+      - DistilBERT (a smaller, faster, and lighter version of BERT)
+   - Implement early stopping and learning rate scheduling for stable and efficient training
      
-3. **Model Evaluation ✅** :
+4. **Model Evaluation ✅** :
    - Evaluate using metrics: Accuracy, Precision, Recall, F1-score
    - Visualize results using Confusion Matrix and ROC-AUC Curve
    - Perform cross-validation or train/test split validation
    - fine-tuning hyperparameters to improve performance
+   
+4. **Visualization and Reporting** 📈  
+   - build an interactive Power BI dashboard for exploring sentiment, risk, and topic trends.
      
-4. **Deployment 🌐** :
+5. **Deployment 🌐** :
    - Deploy the best-performing model as a web app using **Streamlit**
    - Provide easy-to-use input forms and display prediction results clearly.
    - Host on **Streamlit Cloud**
@@ -47,11 +68,11 @@ Whether you’re a data enthusiast eager to uncover public opinions, or a develo
 
 - **Python 3**
 - **Libraries**:
-  - `pandas`, `numpy` (data handling)
-  - `nltk`, `spaCy`, `transformers` — NLP and text processing 
-  - `TensorFlow`, `PyTorch` (for deep learning modeling)
-  - `scikit-learn` (traditional ML models)
-  - `Matplotlib`, `Seaborn` (visualization)
+  - `pandas`, `numpy` — (data handling)
+  - `nltk`, `spaCy`, `transformers` — NLP and text processing
+  - `gensim`, `scikit-learn`  — Topic modeling
+  - `TensorFlow`, `PyTorch` — Deep learning modeling
+  - `Matplotlib`, `Seaborn`,`wordcloud`, `PowerBI` — Visualization
 - **Deployment**: Streamlit Cloud / local
 
 
@@ -62,9 +83,10 @@ Whether you’re a data enthusiast eager to uncover public opinions, or a develo
 ## 📂 Project Structure
 ```bash
 ├── data/                 # dataset (CSV/JSON)
-├── notebooks/            # Jupyter notebooks for EDA and model building
+├── notebooks/            # Jupyter notebooks for EDA, preprocessing, modeling
 ├── models/               # Saved models
-├── app.py                # Streamlit app
+├── dashboard/            # Power BI dashboard
+├── app/                  # Streamlit app
 ├── requirements.txt      # Project dependencies
 └── README.md             # Project documentation
 ```
@@ -84,13 +106,9 @@ streamlit run app.py
 
 ```
 
+## 🌟 Motivation
 
-
-
-## 📌 Future Work
-- Add topic modeling (e.g., LDA) to extract themes from opinions
-- ...
-
+Food security is a critical issue affecting millions worldwide, and public sentiment can reveal valuable insights about food availability, accessibility, and concerns within Malaysia. By analyzing social media and public posts, this project aims to assist policymakers, NGOs, and stakeholders in making data-driven decisions to improve food security strategies.
 
 
 ## 🕵️‍♂️ Contributing
@@ -99,18 +117,13 @@ Feel free to check the [issues page](https://github.com/ibtihel-dhaouadi/Food-Se
 
 
 
-
-## 🤝 Collaboration
-This project is developed collaboratively by:
-
-- Onj Hajri ➔   🧑‍💻 [GitHub](https://github.com/onsrajhi)  | 🔗 [LinkedIn](https://www.linkedin.com/in/onsrj/) 
-- Dhaouadi Ibtihel ➔  🧑‍💻 [GitHub](https://github.com/ibtihel-dhaouadi) | 🔗 [LinkedIn](https://www.linkedin.com/in/ibtihel-dhaouadi/) 
-
 ---
 
-<p align="center"> Thanks for taking the time to check out our project! 🙌 </p>
+Thanks for taking the time to check out my project! 🙌
 
-<p align="center"> If this project sparks your interest, don’t hesitate to drop a ⭐ and reach out with your ideas or questions — we’re all ears! 👂🔥 </p>
+If this project sparks your interest, don’t hesitate to drop a ⭐ and reach out with your ideas or questions — I’m all ears! 👂🔥
+
+You can also visit my 🧑‍💻 [GitHub](https://github.com/ibtihel-dhaouadi) profile or 🏆 [Kaggle](https://www.kaggle.com/dhaouadiibtihel98) profile for more projects
 
 ---
 
