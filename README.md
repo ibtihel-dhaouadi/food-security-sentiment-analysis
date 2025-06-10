@@ -35,10 +35,10 @@ The dataset consists of multilingual social media posts related to food security
    - score sentiment with VADER (very positive, positive, negative, very negative)
    - detect high-risk or vulnerable posts by setting sentiment-score thresholds
    - discover key themes via LDA topic modeling, evaluating with perplexity and coherence.
-   - Apply padding (only for embedding-based models requiring fixed-length input).
-   - Tokenize input using BERT tokenizer.
-   - Handling Class Imbalance
    - Encode sentiment classes into numerical labels.
+   - Tokenize input using BERT tokenizer.
+   - Apply padding (only for embedding-based models requiring fixed-length input).
+   - Handling Class Imbalance
    - Split the dataset into training, validation, and test sets.
      
 3. **Model Building 🤖** :
