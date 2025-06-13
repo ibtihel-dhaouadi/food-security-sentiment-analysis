@@ -1,4 +1,4 @@
-# 📊 Sentiment Analysis on Food Security in Malaysia | NLP 🌾🇲🇾
+# 📊 Sentiment Analysis on Food Security in Malaysia | NLP🌾🇲🇾
 
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
@@ -123,7 +123,7 @@ Thanks for taking the time to check out my project! 🙌
 
 If this project sparks your interest, don’t hesitate to drop a ⭐ and reach out with your ideas or questions — I’m all ears! 👂🔥
 
-You can also visit my 🧑‍💻 [GitHub](https://github.com/ibtihel-dhaouadi) profile or 🏆 [Kaggle](https://www.kaggle.com/dhaouadiibtihel98) profile for more projects
+You can also visit my 🧑‍💻 [GitHub](https://github.com/ibtihel-dhaouadi) profile or 🏆 [Kaggle](https://www.kaggle.com/dhaouadiibtihel98) profile for more projects.
 
 ---
 
