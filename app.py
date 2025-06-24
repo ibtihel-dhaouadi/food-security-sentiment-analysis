@@ -110,7 +110,7 @@ def eda_page():
     # Load preprocessed dataset once with caching
     @st.cache_data(show_spinner=True)
     def load_data():
-        df = pd.read_csv("dataset/food_security_processed_data.csv", parse_dates=["Datetime"])
+        df = pd.read_csv("Dataset/food_security_processed_data.csv", parse_dates=["Datetime"])
         return df
 
     df = load_data()
