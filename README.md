@@ -78,7 +78,9 @@ The dataset consists of multilingual social media posts related to food security
 
 ## 📊 Demo
 
-🚧 **Coming Soon** — The web app link will be available after deployment.
+👉 [Click here to try the app](https://food-security-sentiment-analysis.streamlit.app/)  
+
+[![App Screenshot](https://github.com/ibtihel-dhaouadi/food-security-sentiment-analysis/blob/main/capture%20app.png)](https://food-security-sentiment-analysis.streamlit.app/)  
 
 ## 📂 Project Structure
 ```bash
