@@ -13,6 +13,13 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import random
+import nltk
+
+# Ensure NLTK stopwords are available
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
 
 # --- Text Preprocessor Class ---
 lemmatizer = WordNetLemmatizer()
