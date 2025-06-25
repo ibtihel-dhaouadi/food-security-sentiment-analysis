@@ -18,8 +18,12 @@ import nltk
 # Ensure NLTK stopwords are available
 try:
     nltk.data.find("corpora/stopwords")
+    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('corpora/wordnet')
 except LookupError:
-    nltk.download("stopwords")
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
 
 # --- Text Preprocessor Class ---
 lemmatizer = WordNetLemmatizer()
