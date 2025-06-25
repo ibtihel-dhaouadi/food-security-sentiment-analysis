@@ -15,15 +15,18 @@ from nltk.corpus import stopwords
 import random
 import nltk
 
-# Ensure NLTK stopwords are available
-try:
-    nltk.data.find("corpora/stopwords")
-    nltk.data.find('tokenizers/punkt')
-    nltk.data.find('corpora/wordnet')
-except LookupError:
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
+resources = {
+    'punkt': 'tokenizers/punkt',
+    'stopwords': 'corpora/stopwords',
+    'wordnet': 'corpora/wordnet',
+    'omw-1.4': 'corpora/omw-1.4'
+}
+
+for resource_name, resource_path in resources.items():
+    try:
+        nltk.data.find(resource_path)
+    except LookupError:
+        nltk.download(resource_name)
 
 # --- Text Preprocessor Class ---
 lemmatizer = WordNetLemmatizer()
