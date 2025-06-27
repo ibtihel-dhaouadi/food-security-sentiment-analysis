@@ -69,9 +69,9 @@ class TextPreprocessor(BaseEstimator, TransformerMixin):
 
 # --- Load Model and Tokenizer ---
 @st.cache_resource(show_spinner=False)
-def load_model_tokenizer(model_dir="Models/DistilBert_sentiment_model"):
-    tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
-    model = DistilBertForSequenceClassification.from_pretrained(model_dir)
+def load_model_tokenizer(model_name="ibtihel-dhaouadi/DistilBert_sentiment_model"):
+    tokenizer = DistilBertTokenizer.from_pretrained(model_name)
+    model = DistilBertForSequenceClassification.from_pretrained(model_name)
     model.eval()
     return model, tokenizer
 
